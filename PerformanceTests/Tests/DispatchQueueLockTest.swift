@@ -1,5 +1,5 @@
 //
-//  NSLockTest.swift
+//  DispatchQueueLockTest.swift
 //  PerformanceTests
 //
 //  Created by Daniel Baird on 7/21/22.
@@ -7,33 +7,32 @@
 
 import Foundation
 
-struct NSLockTest: Test {
+struct DispatchQueueLockTest: Test {
     class AtomicInt {
-        private let lock: NSLock = NSLock()
+        private let dispatchQueue: DispatchQueue = DispatchQueue(label: "atomicInt")
         private var _state: Int = 0
 
         var state: Int {
             get {
-                lock.lock()
-                let value = _state
-                lock.unlock()
-                return value
+                return dispatchQueue.sync {
+                    let value = _state
+                    return value
+                }
             }
         }
         
         @discardableResult
         func incrementAndGet() -> Int {
-            lock.lock()
-            _state += 1
-            let current = _state
-            lock.unlock()
-            return current
+            return dispatchQueue.sync {
+                _state += 1
+                return _state
+            }
         }
         
         init() { }
     }
 
-    var name: String = "Thread safety using NSLock"
+    var name: String = "Thread safety using dispatch queue"
     
     func run(iterations: Int) async -> TimeInterval {
         return timed {

@@ -8,12 +8,14 @@
 import Foundation
 
 struct ActorTest: Test {
-    actor MutableStateActor {
+    actor AtomicInt {
         // Can't mutate from outside of the actor apparently anyway
         private(set) var state: Int = 0
         
-        func setState(_ newState: Int) {
-            state = newState
+        @discardableResult
+        func incrementAndGet() -> Int {
+            state += 1
+            return state
         }
         
         init() { }
@@ -23,10 +25,10 @@ struct ActorTest: Test {
     
     func run(iterations: Int) async -> TimeInterval {
         return await timed {
-            let mutableState = MutableStateActor()
+            let mutableState = AtomicInt()
             
             for _ in 0..<iterations {
-                await mutableState.setState(await mutableState.state + 1)
+                await mutableState.incrementAndGet()
             }
         }
     }

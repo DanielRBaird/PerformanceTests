@@ -15,7 +15,13 @@ class TestGroups {
         ),
         TestGroup(
             name: "Actor vs Locks",
-            testList: [NoLockTest(), NSLockTest(), NSRecursiveLockTest(), ActorTest()]
+            testList: [
+                NoLockTest(),
+                NSLockTest(),
+                NSRecursiveLockTest(),
+                DispatchQueueLockTest(),
+                ActorTest()
+            ]
         )
     ]
 }

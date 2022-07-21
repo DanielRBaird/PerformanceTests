@@ -22,7 +22,7 @@ struct NoLockTest: Test {
             let mutableState = MutableStateClass()
             
             for _ in 0..<iterations {
-                mutableState.state = mutableState.state + 1
+                mutableState.state += 1
             }
         }
     }

@@ -10,35 +10,39 @@ import Foundation
 
 struct NSRecursiveLockTest: Test {
     
-    class MutableStateClass {
-        private let lock: NSRecursiveLock = NSRecursiveLock()
+    class AtomicInt {
+        private let lock: NSLock = NSLock()
         private var _state: Int = 0
 
-        public var state: Int {
+        var state: Int {
             get {
                 lock.lock()
                 let value = _state
                 lock.unlock()
                 return value
             }
-            set {
-                lock.lock()
-                _state = newValue
-                lock.unlock()
-            }
         }
         
-        public init() { }
+        @discardableResult
+        func incrementAndGet() -> Int {
+            lock.lock()
+            _state += 1
+            let current = _state
+            lock.unlock()
+            return current
+        }
+        
+        init() { }
     }
-    
+
     var name: String = "Thread safety using NSRecursiveLock"
     
     func run(iterations: Int) async -> TimeInterval {
         return timed {
-            let mutableState = MutableStateClass()
+            let mutableState = AtomicInt()
             
             for _ in 0..<iterations {
-                mutableState.state = mutableState.state + 1
+                mutableState.incrementAndGet()
             }
         }
     }
