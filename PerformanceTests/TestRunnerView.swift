@@ -27,7 +27,6 @@ struct TestRunnerView: View {
             } else if viewModel.running {
                 ProgressView()
             } else {
-                // Nothing to display right now. Show loading
                 Chart {
                     EmptyChartContent()
                 }
