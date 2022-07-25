@@ -13,24 +13,28 @@ struct TestRunnerView: View {
     @State var iterationMagnitude: Double = 5 // 10^5
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text(viewModel.testGroup.description)
+                .padding()
             Spacer()
-            if !viewModel.running && !viewModel.testResults.isEmpty {
-                Chart {
-                    ForEach(viewModel.testResults) { result in
-                        BarMark(
-                            x: .value("Time", result.time),
-                            y: .value("Test name", result.test.name)
-                        )
+            VStack(alignment: .center) {
+                if !viewModel.running && !viewModel.testResults.isEmpty {
+                    Chart {
+                        ForEach(viewModel.testResults) { result in
+                            BarMark(
+                                x: .value("Time", result.time),
+                                y: .value("Test name", result.test.name)
+                            )
+                        }
+                    }.padding()
+                } else if viewModel.running {
+                    ProgressView()
+                } else {
+                    Chart {
+                        EmptyChartContent()
                     }
-                }.padding()
-            } else if viewModel.running {
-                ProgressView()
-            } else {
-                Chart {
-                    EmptyChartContent()
                 }
-            }
+            }.frame(maxWidth: .infinity)
             Spacer()
             Divider()
             

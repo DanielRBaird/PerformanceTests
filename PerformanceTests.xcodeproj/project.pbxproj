@@ -27,6 +27,7 @@
 		0347CD4828896D1800E1210B /* NoLockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347CD4728896D1800E1210B /* NoLockTest.swift */; };
 		0347CD4A28896E0700E1210B /* NoThreadSwitchingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347CD4928896E0700E1210B /* NoThreadSwitchingTest.swift */; };
 		034C784128898FB300891667 /* DispatchQueueLockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C784028898FB300891667 /* DispatchQueueLockTest.swift */; };
+		03D05C97288EA6D90034FAC8 /* UnfairLockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D05C96288EA6D90034FAC8 /* UnfairLockTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0347CD4728896D1800E1210B /* NoLockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLockTest.swift; sourceTree = "<group>"; };
 		0347CD4928896E0700E1210B /* NoThreadSwitchingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoThreadSwitchingTest.swift; sourceTree = "<group>"; };
 		034C784028898FB300891667 /* DispatchQueueLockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueLockTest.swift; sourceTree = "<group>"; };
+		03D05C96288EA6D90034FAC8 /* UnfairLockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLockTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				0347CD4728896D1800E1210B /* NoLockTest.swift */,
 				0347CD4928896E0700E1210B /* NoThreadSwitchingTest.swift */,
 				034C784028898FB300891667 /* DispatchQueueLockTest.swift */,
+				03D05C96288EA6D90034FAC8 /* UnfairLockTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0347CD42288960A100E1210B /* NSLockTest.swift in Sources */,
 				0347CD4028894FAF00E1210B /* TestRunnerViewModel.swift in Sources */,
 				0347CD44288960AB00E1210B /* ActorTest.swift in Sources */,
+				03D05C97288EA6D90034FAC8 /* UnfairLockTest.swift in Sources */,
 				0347CD46288962DE00E1210B /* NSRecursiveLockTest.swift in Sources */,
 				0347CD2D2889430A00E1210B /* TestGroup.swift in Sources */,
 			);
