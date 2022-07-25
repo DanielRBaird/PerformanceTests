@@ -123,17 +123,13 @@
 		0347CCFE28892E3A00E1210B /* PerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
+				03D05C9B288EC6DF0034FAC8 /* ViewModels */,
+				03D05C9A288EC6C90034FAC8 /* Views */,
 				0347CD322889463C00E1210B /* Tests */,
 				0347CCFF28892E3A00E1210B /* PerformanceTestsApp.swift */,
-				0347CD0128892E3A00E1210B /* PerformanceTestListView.swift */,
 				0347CD0328892E3B00E1210B /* Assets.xcassets */,
 				0347CD0528892E3B00E1210B /* PerformanceTests.entitlements */,
 				0347CD0628892E3B00E1210B /* Preview Content */,
-				0347CD2A288942BF00E1210B /* Test.swift */,
-				0347CD2C2889430A00E1210B /* TestGroup.swift */,
-				0347CD3928894A8700E1210B /* TestGroups.swift */,
-				0347CD3D28894E6D00E1210B /* TestRunnerView.swift */,
-				0347CD3F28894FAF00E1210B /* TestRunnerViewModel.swift */,
 			);
 			path = PerformanceTests;
 			sourceTree = "<group>";
@@ -166,17 +162,53 @@
 		0347CD322889463C00E1210B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0347CD332889464D00E1210B /* DispatchQueueTest.swift */,
-				0347CD35288948BD00E1210B /* AsyncAwaitTest.swift */,
-				0347CD41288960A100E1210B /* NSLockTest.swift */,
-				0347CD43288960AB00E1210B /* ActorTest.swift */,
-				0347CD45288962DE00E1210B /* NSRecursiveLockTest.swift */,
-				0347CD4728896D1800E1210B /* NoLockTest.swift */,
-				0347CD4928896E0700E1210B /* NoThreadSwitchingTest.swift */,
-				034C784028898FB300891667 /* DispatchQueueLockTest.swift */,
-				03D05C96288EA6D90034FAC8 /* UnfairLockTest.swift */,
+				0347CD3928894A8700E1210B /* TestGroups.swift */,
+				0347CD2A288942BF00E1210B /* Test.swift */,
+				0347CD2C2889430A00E1210B /* TestGroup.swift */,
+				03D05C99288EC69A0034FAC8 /* MultiThreading */,
+				03D05C98288EC6850034FAC8 /* Locking */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		03D05C98288EC6850034FAC8 /* Locking */ = {
+			isa = PBXGroup;
+			children = (
+				03D05C96288EA6D90034FAC8 /* UnfairLockTest.swift */,
+				034C784028898FB300891667 /* DispatchQueueLockTest.swift */,
+				0347CD45288962DE00E1210B /* NSRecursiveLockTest.swift */,
+				0347CD4728896D1800E1210B /* NoLockTest.swift */,
+				0347CD41288960A100E1210B /* NSLockTest.swift */,
+				0347CD43288960AB00E1210B /* ActorTest.swift */,
+			);
+			path = Locking;
+			sourceTree = "<group>";
+		};
+		03D05C99288EC69A0034FAC8 /* MultiThreading */ = {
+			isa = PBXGroup;
+			children = (
+				0347CD332889464D00E1210B /* DispatchQueueTest.swift */,
+				0347CD35288948BD00E1210B /* AsyncAwaitTest.swift */,
+				0347CD4928896E0700E1210B /* NoThreadSwitchingTest.swift */,
+			);
+			path = MultiThreading;
+			sourceTree = "<group>";
+		};
+		03D05C9A288EC6C90034FAC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0347CD0128892E3A00E1210B /* PerformanceTestListView.swift */,
+				0347CD3D28894E6D00E1210B /* TestRunnerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03D05C9B288EC6DF0034FAC8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0347CD3F28894FAF00E1210B /* TestRunnerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
